@@ -6,8 +6,11 @@ interface DiscoveredStock {
   ticker: string
   score: number
   reason: string
-  addedToWatchlist: boolean
-  discoveredAt: string
+  price?: number
+  volume?: number
+  market_cap?: number
+  added_to_watchlist: boolean
+  discovered_at: string
 }
 
 export default function DiscoveredStocks() {
@@ -17,14 +20,21 @@ export default function DiscoveredStocks() {
 
   useEffect(() => {
     fetchDiscoveredStocks()
+
+    // Refresh every 30 seconds
+    const interval = setInterval(fetchDiscoveredStocks, 30000)
+    return () => clearInterval(interval)
   }, [])
 
   const fetchDiscoveredStocks = async () => {
     try {
-      // This would fetch from a new API endpoint that tracks discovered stocks
-      // For now, we'll show a placeholder
-      setStocks([])
-      setLastDiscovery(null)
+      const res = await fetch('/api/discovered-stocks')
+      const data = await res.json()
+
+      if (res.ok) {
+        setStocks(data.stocks || [])
+        setLastDiscovery(data.lastDiscovery)
+      }
     } catch (error) {
       console.error('Error fetching discovered stocks:', error)
     } finally {
@@ -121,36 +131,64 @@ export default function DiscoveredStocks() {
           </p>
         </div>
       ) : (
-        <div className="space-y-2">
-          {stocks.map((stock) => (
-            <div
-              key={stock.ticker}
-              className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg border border-gray-200 dark:border-gray-600"
-            >
-              <div className="flex items-center gap-3 flex-1">
-                <div className="font-bold text-lg text-gray-900 dark:text-white">
-                  {stock.ticker}
-                </div>
-                <div className="flex-1">
-                  <div className="text-sm text-gray-600 dark:text-gray-400">
-                    {stock.reason}
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="text-right">
-                  <div className="text-xs text-gray-500 dark:text-gray-400">Score</div>
-                  <div className="text-lg font-bold text-blue-600">{stock.score}</div>
-                </div>
-                {stock.addedToWatchlist && (
-                  <div className="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded text-xs font-medium">
-                    ✓ Added
-                  </div>
-                )}
-              </div>
+        <>
+          <div className="mb-3 flex items-center justify-between">
+            <div className="text-sm font-medium text-gray-700 dark:text-gray-300">
+              Found {stocks.length} stocks • {stocks.filter(s => s.added_to_watchlist).length} added to watchlist
             </div>
-          ))}
-        </div>
+            {lastDiscovery && (
+              <div className="text-xs text-gray-500 dark:text-gray-400">
+                {new Date(lastDiscovery).toLocaleString()}
+              </div>
+            )}
+          </div>
+
+          <div className="space-y-2 max-h-96 overflow-y-auto">
+            {stocks.map((stock) => (
+              <div
+                key={stock.ticker}
+                className={`flex items-center justify-between p-3 rounded-lg border transition-all ${
+                  stock.added_to_watchlist
+                    ? 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800'
+                    : 'bg-gray-50 dark:bg-gray-700/50 border-gray-200 dark:border-gray-600'
+                }`}
+              >
+                <div className="flex items-center gap-3 flex-1 min-w-0">
+                  <div className="font-bold text-lg text-gray-900 dark:text-white">
+                    {stock.ticker}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-sm text-gray-600 dark:text-gray-400 truncate">
+                      {stock.reason}
+                    </div>
+                    {stock.price && (
+                      <div className="text-xs text-gray-500 dark:text-gray-500 mt-0.5">
+                        ${stock.price.toFixed(2)} • Vol: {stock.volume ? (stock.volume / 1000000).toFixed(1) + 'M' : 'N/A'}
+                      </div>
+                    )}
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 flex-shrink-0">
+                  <div className="text-right">
+                    <div className="text-xs text-gray-500 dark:text-gray-400">Score</div>
+                    <div className={`text-lg font-bold ${
+                      stock.score >= 80 ? 'text-green-600' :
+                      stock.score >= 60 ? 'text-blue-600' :
+                      'text-gray-600'
+                    }`}>
+                      {stock.score.toFixed(0)}
+                    </div>
+                  </div>
+                  {stock.added_to_watchlist && (
+                    <div className="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded text-xs font-medium">
+                      ✓ Added
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </>
       )}
     </div>
   )

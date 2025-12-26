@@ -115,7 +115,7 @@ export class AutonomousWatchlistManager {
    */
   async discoverAndAddStocks(): Promise<{ added: string[]; reasons: Record<string, string> }> {
     const currentSize = await this.getWatchlistSize()
-    
+
     // If watchlist is at max, don't add more
     if (currentSize >= this.config.maxWatchlistSize) {
       console.log(`Watchlist at max size (${currentSize}/${this.config.maxWatchlistSize})`)
@@ -132,9 +132,27 @@ export class AutonomousWatchlistManager {
       maxCandidates: slotsAvailable * 2 // Get 2x to have options
     })
 
+    // Generate a unique run ID for this discovery session
+    const runId = crypto.randomUUID()
+
     const added: string[] = []
     const reasons: Record<string, string> = {}
 
+    // Save all discovered stocks to database (for visibility)
+    for (const candidate of candidates) {
+      await this.supabase.from('discovered_stocks').insert({
+        ticker: candidate.symbol,
+        score: candidate.score,
+        reason: candidate.reason,
+        price: candidate.price,
+        volume: candidate.volume,
+        market_cap: candidate.marketCap,
+        added_to_watchlist: false,
+        discovery_run_id: runId
+      })
+    }
+
+    // Add top candidates to watchlist
     for (const candidate of candidates) {
       if (added.length >= slotsAvailable) break
 
@@ -148,6 +166,13 @@ export class AutonomousWatchlistManager {
         await this.addToWatchlist(candidate.symbol, candidate.reason)
         added.push(candidate.symbol)
         reasons[candidate.symbol] = `Score: ${candidate.score} - ${candidate.reason}`
+
+        // Mark as added to watchlist
+        await this.supabase
+          .from('discovered_stocks')
+          .update({ added_to_watchlist: true })
+          .eq('ticker', candidate.symbol)
+          .eq('discovery_run_id', runId)
       }
     }
 

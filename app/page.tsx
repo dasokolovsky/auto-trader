@@ -8,9 +8,11 @@ import ActivityFeed from '@/components/ActivityFeed'
 import EnhancedWatchlist from '@/components/EnhancedWatchlist'
 import PerformanceMetrics from '@/components/PerformanceMetrics'
 import AnalyticsDashboard from '@/components/AnalyticsDashboard'
+import CronControls from '@/components/CronControls'
+import DiscoveredStocks from '@/components/DiscoveredStocks'
 
 export default function Dashboard() {
-  const [activeView, setActiveView] = useState<'dashboard' | 'analytics'>('dashboard')
+  const [activeView, setActiveView] = useState<'dashboard' | 'analytics' | 'admin'>('dashboard')
   const [botStatus, setBotStatus] = useState('active')
 
   // Auto-refresh every 30 seconds during market hours
@@ -69,6 +71,16 @@ export default function Dashboard() {
             >
               📈 Analytics
             </button>
+            <button
+              onClick={() => setActiveView('admin')}
+              className={`px-6 py-2.5 rounded-lg font-semibold transition-all ${
+                activeView === 'admin'
+                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/50'
+                  : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+              }`}
+            >
+              🔧 Admin
+            </button>
           </div>
 
           {/* Market Status Indicator */}
@@ -110,13 +122,21 @@ export default function Dashboard() {
               <PerformanceMetrics />
             </div>
 
-            {/* Watchlist - Full Width */}
-            <div>
+            {/* Watchlist & Discovery Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <EnhancedWatchlist />
+              <DiscoveredStocks />
             </div>
           </>
-        ) : (
+        ) : activeView === 'analytics' ? (
           <AnalyticsDashboard />
+        ) : (
+          /* Admin View */
+          <div className="space-y-6">
+            <CronControls />
+            <DiscoveredStocks />
+            <EnhancedWatchlist />
+          </div>
         )}
       </div>
     </div>

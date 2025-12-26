@@ -1,0 +1,158 @@
+'use client'
+
+import { useState, useEffect } from 'react'
+
+interface DiscoveredStock {
+  ticker: string
+  score: number
+  reason: string
+  addedToWatchlist: boolean
+  discoveredAt: string
+}
+
+export default function DiscoveredStocks() {
+  const [stocks, setStocks] = useState<DiscoveredStock[]>([])
+  const [loading, setLoading] = useState(true)
+  const [lastDiscovery, setLastDiscovery] = useState<string | null>(null)
+
+  useEffect(() => {
+    fetchDiscoveredStocks()
+  }, [])
+
+  const fetchDiscoveredStocks = async () => {
+    try {
+      // This would fetch from a new API endpoint that tracks discovered stocks
+      // For now, we'll show a placeholder
+      setStocks([])
+      setLastDiscovery(null)
+    } catch (error) {
+      console.error('Error fetching discovered stocks:', error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  if (loading) {
+    return (
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700">
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Stock Discovery</h2>
+        <div className="animate-pulse space-y-3">
+          {[1, 2, 3].map(i => (
+            <div key={i} className="h-16 bg-gray-200 dark:bg-gray-700 rounded-lg"></div>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700">
+      {/* Header */}
+      <div className="flex items-center justify-between mb-4">
+        <div>
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white">Stock Discovery</h2>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+            Automatically screened stocks from market analysis
+          </p>
+        </div>
+        {lastDiscovery && (
+          <div className="text-right">
+            <div className="text-xs text-gray-500 dark:text-gray-400">Last Discovery</div>
+            <div className="text-sm font-medium text-gray-900 dark:text-white">
+              {new Date(lastDiscovery).toLocaleDateString()}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Status Banner */}
+      <div className="mb-4 p-4 bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 border border-purple-200 dark:border-purple-800 rounded-lg">
+        <div className="flex items-center gap-3">
+          <div className="text-3xl">🔍</div>
+          <div className="flex-1">
+            <div className="font-semibold text-gray-900 dark:text-white mb-1">
+              Autonomous Stock Discovery
+            </div>
+            <div className="text-sm text-gray-600 dark:text-gray-400">
+              The system screens <strong>100+ stocks daily</strong> using technical analysis, 
+              volume patterns, and trend filters. Top performers are automatically added to your watchlist.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Discovery Process */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+        <div className="p-4 bg-gray-50 dark:bg-gray-700/50 rounded-lg border border-gray-200 dark:border-gray-600">
+          <div className="text-2xl mb-2">📊</div>
+          <div className="font-semibold text-gray-900 dark:text-white mb-1">Screen</div>
+          <div className="text-xs text-gray-600 dark:text-gray-400">
+            Analyzes 100+ stocks from Yahoo Finance screeners
+          </div>
+        </div>
+        
+        <div className="p-4 bg-gray-50 dark:bg-gray-700/50 rounded-lg border border-gray-200 dark:border-gray-600">
+          <div className="text-2xl mb-2">🎯</div>
+          <div className="font-semibold text-gray-900 dark:text-white mb-1">Score</div>
+          <div className="text-xs text-gray-600 dark:text-gray-400">
+            Ranks by RSI, volume, trend, and momentum
+          </div>
+        </div>
+        
+        <div className="p-4 bg-gray-50 dark:bg-gray-700/50 rounded-lg border border-gray-200 dark:border-gray-600">
+          <div className="text-2xl mb-2">✨</div>
+          <div className="font-semibold text-gray-900 dark:text-white mb-1">Add</div>
+          <div className="text-xs text-gray-600 dark:text-gray-400">
+            Top 5-10 stocks added to watchlist automatically
+          </div>
+        </div>
+      </div>
+
+      {/* Discovered Stocks List */}
+      {stocks.length === 0 ? (
+        <div className="text-center py-8">
+          <div className="text-5xl mb-3">🌟</div>
+          <p className="text-gray-500 dark:text-gray-400 font-medium">No discoveries yet</p>
+          <p className="text-sm text-gray-400 dark:text-gray-500 mt-2">
+            Next discovery run: <strong>Tomorrow at 8 AM ET</strong>
+          </p>
+          <p className="text-xs text-gray-400 dark:text-gray-500 mt-2">
+            Or use the Cron Controls to run discovery manually
+          </p>
+        </div>
+      ) : (
+        <div className="space-y-2">
+          {stocks.map((stock) => (
+            <div
+              key={stock.ticker}
+              className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg border border-gray-200 dark:border-gray-600"
+            >
+              <div className="flex items-center gap-3 flex-1">
+                <div className="font-bold text-lg text-gray-900 dark:text-white">
+                  {stock.ticker}
+                </div>
+                <div className="flex-1">
+                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                    {stock.reason}
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="text-right">
+                  <div className="text-xs text-gray-500 dark:text-gray-400">Score</div>
+                  <div className="text-lg font-bold text-blue-600">{stock.score}</div>
+                </div>
+                {stock.addedToWatchlist && (
+                  <div className="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded text-xs font-medium">
+                    ✓ Added
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
+

@@ -90,7 +90,32 @@ export default function EnhancedWatchlist() {
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700">
-      <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Watchlist</h2>
+      {/* Header with Autonomous Badge */}
+      <div className="flex items-center justify-between mb-4">
+        <div>
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white">Watchlist</h2>
+          <div className="flex items-center gap-2 mt-1">
+            <div className="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded text-xs font-medium">
+              🤖 AUTO-MANAGED
+            </div>
+            <span className="text-xs text-gray-500 dark:text-gray-400">
+              Discovers stocks daily at 8 AM ET
+            </span>
+          </div>
+        </div>
+        <div className="text-right">
+          <div className="text-xs text-gray-500 dark:text-gray-400">Stocks Monitored</div>
+          <div className="text-2xl font-bold text-gray-900 dark:text-white">{watchlist.length}</div>
+        </div>
+      </div>
+
+      {/* Info Banner */}
+      <div className="mb-4 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+        <div className="text-xs text-blue-800 dark:text-blue-400">
+          💡 <strong>How it works:</strong> The system automatically discovers profitable stocks daily and manages this list.
+          You can manually add/remove stocks as overrides.
+        </div>
+      </div>
 
       {/* Add Ticker Form */}
       <form onSubmit={handleAddTicker} className="mb-4">

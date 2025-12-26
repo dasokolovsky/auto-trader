@@ -1,0 +1,912 @@
+
+> auto-trader@0.1.0 dev
+> next dev
+
+▲ Next.js 16.1.1 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.66:3000
+- Environments: .env.local
+
+✓ Starting...
+✓ Ready in 505ms
+
+thread 'tokio-runtime-worker' (401076658) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 98946 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+thread 'tokio-runtime-worker' (401076654) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for <FileSource as Asset>::content (TaskId 147))
+
+Caused by:
+    0: Looking up data for TaskId 147 from database failed
+    1: Unable to open static sorted file referenced from 00000041.meta
+    2: Unable to open static sorted file 00000037.sst
+    3: No such file or directory (os error 2)
+Persisting failed: Unable to write SST file 00000043.sst
+
+Caused by:
+    No such file or directory (os error 2)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+
+thread 'tokio-runtime-worker' (401076676) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 7691 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+
+thread 'tokio-runtime-worker' (401076651) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 74229 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076662) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 12384 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 12963 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076652) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 26530 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076676) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 12107 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076658) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 75135 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076654) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 55074 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401085222) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 20011 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076655) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 73096 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076659) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 60435 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 64261 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076662) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 71259 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076662) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 75185 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076662) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 48580 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 56357 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 74329 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 34282 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 21067 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 33149 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 32570 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 12257 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 56734 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 74102 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 15806 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 61466 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 27611 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 73850 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 57917 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 73573 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 28819 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 23231 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 28265 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 19430 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 35338 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 53914 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 58923 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 21519 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 23306 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 64536 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 24514 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 57790 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 56632 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 36923 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 34280 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 11903 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 13086 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 10720 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 34909 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 61691 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 22827 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 74100 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 59677 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 777 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 20813 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 12280 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 13136 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 12003 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 21140 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 52000 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076662) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 57965 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076662) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 73873 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076662) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 71230 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076662) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 85024 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076662) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 39112 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076662) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 73571 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 32089 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 877 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 19253 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076660) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 600 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 58619 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 18874 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 48324 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 72488 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 61589 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 57386 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 61514 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 20007 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 28263 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 61841 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 59877 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 39212 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 74325 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 75231 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 55522 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 34907 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 53458 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 23454 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 44673 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 73242 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 25241 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 26424 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 73569 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 55874 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076662) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 62368 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076662) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 25291 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076662) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 73267 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 1152 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 22396 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 26524 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076653) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 11799 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076661) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 59800 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+-----
+[1m[31mFATAL[39m[0m: An unexpected Turbopack error occurred. A panic log has been written to /var/folders/4k/f8glh46s6jb4q86766fzmy8c0000gn/T/next-panic-e432bbf1bfb595504405f8b816d181ad.log.
+
+To help make Turbopack better, report this error by ]8;;https://github.com/vercel/next.js/discussions/new?category=turbopack-error-report&title=Turbopack%20Error%3A%20Failed%20to%20lookup%20task%20type%3A%20Looking%20up%20task%20type%20for%20TaskId%2059800%20from%20database%20failed&body=Turbopack%20version%3A%20%60v16.1.0-canary.19-84-g3aa53984e%60%0ANext.js%20version%3A%20%600.0.0%60%0A%0AError%20message%3A%0A%60%60%60%0AFailed%20to%20lookup%20task%20type%3A%20Looking%20up%20task%20type%20for%20TaskId%2059800%20from%20database%20failed%0A%0ADebug%20info%3A%0A-%20Failed%20to%20lookup%20task%20type%3A%20Looking%20up%20task%20type%20for%20TaskId%2059800%20from%20database%20failed%0A%20%20%0A%20%20Caused%20by%3A%0A%20%20%20%20%20%200%3A%20Unable%20to%20open%20static%20sorted%20file%20referenced%20from%2000000029.meta%0A%20%20%20%20%20%201%3A%20Unable%20to%20open%20static%20sorted%20file%2000000024.sst%0A%20%20%20%20%20%202%3A%20No%20such%20file%20or%20directory%20%28os%20error%202%29%0A%60%60%60&labels=Turbopack,Turbopack%20Panic%20Backtrace\clicking here.]8;;\
+-----
+
+
+thread 'tokio-runtime-worker' (401076658) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 421 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076652) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 438 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076662) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 426 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076654) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/mod.rs:963:22:
+Failed to lookup task type: Looking up task type for TaskId 67979 from database failed
+
+Caused by:
+    0: Unable to open static sorted file referenced from 00000029.meta
+    1: Unable to open static sorted file 00000024.sst
+    2: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (401076661) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for find_pages_structure (TaskId 219))
+
+Caused by:
+    0: Looking up data for TaskId 219 from database failed
+    1: Unable to open static sorted file referenced from 00000041.meta
+    2: Unable to open static sorted file 00000037.sst
+    3: No such file or directory (os error 2)
+○ Compiling /_error ...
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)

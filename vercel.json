@@ -1,0 +1,17 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/execute-strategy",
+      "schedule": "*/15 9-16 * * 1-5"
+    },
+    {
+      "path": "/api/cron/daily-snapshot",
+      "schedule": "0 17 * * 1-5"
+    },
+    {
+      "path": "/api/cron/manage-watchlist",
+      "schedule": "0 8 * * 1-5"
+    }
+  ]
+}
+

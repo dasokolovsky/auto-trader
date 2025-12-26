@@ -71,6 +71,7 @@ export interface AlpacaAccount {
   cash: string
   buying_power: string
   portfolio_value: string
+  daytrade_count?: number
 }
 
 // Trading Signal Types

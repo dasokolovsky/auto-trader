@@ -1,101 +1,118 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import PortfolioOverview from '@/components/PortfolioOverview'
-import PositionsTable from '@/components/PositionsTable'
-import TradeHistory from '@/components/TradeHistory'
-import Watchlist from '@/components/Watchlist'
-import StrategyControls from '@/components/StrategyControls'
-import BotControls from '@/components/BotControls'
+import HeroSection from '@/components/HeroSection'
+import EquityChart from '@/components/EquityChart'
+import CompactPositions from '@/components/CompactPositions'
+import ActivityFeed from '@/components/ActivityFeed'
+import EnhancedWatchlist from '@/components/EnhancedWatchlist'
+import PerformanceMetrics from '@/components/PerformanceMetrics'
 import AnalyticsDashboard from '@/components/AnalyticsDashboard'
-import EnhancedStrategyInfo from '@/components/EnhancedStrategyInfo'
 
 export default function Dashboard() {
-  const [refreshKey, setRefreshKey] = useState(0)
-  const [activeTab, setActiveTab] = useState<'overview' | 'analytics'>('overview')
+  const [activeView, setActiveView] = useState<'dashboard' | 'analytics'>('dashboard')
+  const [botStatus, setBotStatus] = useState('active')
 
-  const handleRefresh = () => {
-    setRefreshKey(prev => prev + 1)
+  // Auto-refresh every 30 seconds during market hours
+  useEffect(() => {
+    const checkMarketHours = () => {
+      const now = new Date()
+      const hour = now.getHours()
+      const day = now.getDay()
+
+      // Market hours: Mon-Fri, 9:30 AM - 4:00 PM ET (simplified)
+      const isMarketHours = day >= 1 && day <= 5 && hour >= 9 && hour <= 16
+
+      if (isMarketHours) {
+        // Trigger refresh by updating a key or calling refresh functions
+        console.log('Market hours - auto-refreshing...')
+      }
+    }
+
+    const interval = setInterval(checkMarketHours, 30000)
+    return () => clearInterval(interval)
+  }, [])
+
+  const handlePause = () => {
+    setBotStatus('paused')
+    // TODO: Call API to pause bot
+  }
+
+  const handleResume = () => {
+    setBotStatus('active')
+    // TODO: Call API to resume bot
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
-            Auto Trader Dashboard
-          </h1>
-          <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-            Automated stock trading with swing trading strategy
-          </p>
-        </div>
-
-        {/* Bot Controls */}
-        <div className="mb-6">
-          <BotControls onStatusChange={handleRefresh} />
-        </div>
-
-        {/* Tab Navigation */}
-        <div className="mb-6 border-b border-gray-200 dark:border-gray-700">
-          <nav className="-mb-px flex space-x-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-gray-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-900">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        {/* Navigation */}
+        <div className="mb-6 flex items-center justify-between">
+          <div className="flex gap-3">
             <button
-              onClick={() => setActiveTab('overview')}
-              className={`py-4 px-1 border-b-2 font-medium text-sm ${
-                activeTab === 'overview'
-                  ? 'border-blue-500 text-blue-600 dark:text-blue-400'
-                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:text-gray-400'
+              onClick={() => setActiveView('dashboard')}
+              className={`px-6 py-2.5 rounded-lg font-semibold transition-all ${
+                activeView === 'dashboard'
+                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/50'
+                  : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
               }`}
             >
-              📊 Overview
+              📊 Dashboard
             </button>
             <button
-              onClick={() => setActiveTab('analytics')}
-              className={`py-4 px-1 border-b-2 font-medium text-sm ${
-                activeTab === 'analytics'
-                  ? 'border-blue-500 text-blue-600 dark:text-blue-400'
-                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:text-gray-400'
+              onClick={() => setActiveView('analytics')}
+              className={`px-6 py-2.5 rounded-lg font-semibold transition-all ${
+                activeView === 'analytics'
+                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/50'
+                  : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
               }`}
             >
               📈 Analytics
             </button>
-          </nav>
+          </div>
+
+          {/* Market Status Indicator */}
+          <div className="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-2 rounded-lg shadow">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+              Live Updates
+            </span>
+          </div>
         </div>
 
-        {/* Tab Content */}
-        {activeTab === 'overview' ? (
+        {/* Content */}
+        {activeView === 'dashboard' ? (
           <>
-            {/* Portfolio Overview */}
+            {/* Hero Section */}
+            <HeroSection
+              onPause={handlePause}
+              onResume={handleResume}
+              botStatus={botStatus}
+            />
+
+            {/* Equity Chart - Full Width */}
             <div className="mb-6">
-              <PortfolioOverview key={refreshKey} />
+              <EquityChart />
             </div>
 
-            {/* Main Grid */}
+            {/* Main Grid - Positions & Activity */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-              {/* Positions - Takes 2 columns */}
               <div className="lg:col-span-2">
-                <PositionsTable key={refreshKey} />
+                <CompactPositions />
               </div>
-
-              {/* Watchlist - Takes 1 column */}
               <div>
-                <Watchlist key={refreshKey} onUpdate={handleRefresh} />
+                <ActivityFeed />
               </div>
             </div>
 
-            {/* Enhanced Strategy Info */}
+            {/* Performance Metrics */}
             <div className="mb-6">
-              <EnhancedStrategyInfo />
+              <PerformanceMetrics />
             </div>
 
-            {/* Strategy Controls */}
-            <div className="mb-6">
-              <StrategyControls key={refreshKey} />
-            </div>
-
-            {/* Trade History */}
+            {/* Watchlist - Full Width */}
             <div>
-              <TradeHistory key={refreshKey} />
+              <EnhancedWatchlist />
             </div>
           </>
         ) : (

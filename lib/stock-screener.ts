@@ -84,10 +84,12 @@ export class StockScreener {
 
       for (const screener of screeners) {
         try {
-          const result = await yahooFinance.screener(screener as any, { count: 25 })
-          
+          const result = await yahooFinance.screener(screener as any)
+
           if (result && result.quotes) {
-            result.quotes.forEach((quote: any) => {
+            // Limit to 25 results
+            const quotes = result.quotes.slice(0, 25)
+            quotes.forEach((quote: any) => {
               if (quote.symbol) {
                 allSymbols.add(quote.symbol)
               }

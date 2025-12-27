@@ -16,7 +16,9 @@ interface DiscoveredStock {
 export default function DiscoveredStocks() {
   const [stocks, setStocks] = useState<DiscoveredStock[]>([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
   const [lastDiscovery, setLastDiscovery] = useState<string | null>(null)
+  const [lastUpdate, setLastUpdate] = useState<Date | null>(null)
 
   useEffect(() => {
     fetchDiscoveredStocks()
@@ -28,15 +30,20 @@ export default function DiscoveredStocks() {
 
   const fetchDiscoveredStocks = async () => {
     try {
+      setError(null)
       const res = await fetch('/api/discovered-stocks')
-      const data = await res.json()
 
-      if (res.ok) {
-        setStocks(data.stocks || [])
-        setLastDiscovery(data.lastDiscovery)
+      if (!res.ok) {
+        throw new Error(`Failed to fetch discovered stocks: ${res.status}`)
       }
-    } catch (error) {
+
+      const data = await res.json()
+      setStocks(data.stocks || [])
+      setLastDiscovery(data.lastDiscovery)
+      setLastUpdate(new Date())
+    } catch (error: any) {
       console.error('Error fetching discovered stocks:', error)
+      setError(error.message || 'Failed to load discovered stocks')
     } finally {
       setLoading(false)
     }
@@ -59,21 +66,46 @@ export default function DiscoveredStocks() {
     <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
-        <div>
+        <div className="flex-1">
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">Stock Discovery</h2>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-            Automatically screened stocks from market analysis
-          </p>
-        </div>
-        {lastDiscovery && (
-          <div className="text-right">
-            <div className="text-xs text-gray-500 dark:text-gray-400">Last Discovery</div>
-            <div className="text-sm font-medium text-gray-900 dark:text-white">
-              {new Date(lastDiscovery).toLocaleDateString()}
-            </div>
+          <div className="flex items-center gap-2 mt-1">
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              Automatically screened stocks from market analysis
+            </p>
+            {lastUpdate && (
+              <span className="text-xs text-gray-400 dark:text-gray-500">
+                • Updated {lastUpdate.toLocaleTimeString()}
+              </span>
+            )}
           </div>
-        )}
+        </div>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={fetchDiscoveredStocks}
+            disabled={loading}
+            className="px-3 py-1.5 text-xs bg-blue-100 hover:bg-blue-200 dark:bg-blue-900/30 dark:hover:bg-blue-900/50 text-blue-700 dark:text-blue-400 rounded-lg font-medium transition-colors disabled:opacity-50"
+          >
+            {loading ? '⟳' : '↻'} Refresh
+          </button>
+          {lastDiscovery && (
+            <div className="text-right">
+              <div className="text-xs text-gray-500 dark:text-gray-400">Last Discovery</div>
+              <div className="text-sm font-medium text-gray-900 dark:text-white">
+                {new Date(lastDiscovery).toLocaleDateString()}
+              </div>
+            </div>
+          )}
+        </div>
       </div>
+
+      {/* Error State */}
+      {error && (
+        <div className="mb-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
+          <div className="text-sm text-red-800 dark:text-red-400">
+            ⚠️ {error}
+          </div>
+        </div>
+      )}
 
       {/* Status Banner */}
       <div className="mb-4 p-4 bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 border border-purple-200 dark:border-purple-800 rounded-lg">

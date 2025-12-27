@@ -12,26 +12,34 @@ interface WatchlistWithSignal extends WatchlistItem {
 export default function EnhancedWatchlist() {
   const [watchlist, setWatchlist] = useState<WatchlistWithSignal[]>([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
   const [newTicker, setNewTicker] = useState('')
   const [adding, setAdding] = useState(false)
+  const [lastUpdate, setLastUpdate] = useState<Date | null>(null)
 
   useEffect(() => {
     fetchWatchlist()
-    // Auto-refresh every 60 seconds
-    const interval = setInterval(fetchWatchlist, 60000)
+    // Auto-refresh every 30 seconds
+    const interval = setInterval(fetchWatchlist, 30000)
     return () => clearInterval(interval)
   }, [])
 
   const fetchWatchlist = async () => {
     try {
+      setError(null)
       const res = await fetch('/api/watchlist')
+
+      if (!res.ok) {
+        throw new Error(`Failed to fetch watchlist: ${res.status}`)
+      }
+
       const data = await res.json()
-      
+
       // Fetch recent decisions to show signals
       const decisionsRes = await fetch('/api/intelligent-decisions?limit=20')
       const decisionsData = await decisionsRes.json()
       const decisions = decisionsData.decisions || []
-      
+
       // Enhance watchlist with signals
       const enhanced = (data.watchlist || []).map((item: WatchlistItem) => {
         const recentDecision = decisions.find((d: any) => d.ticker === item.ticker)
@@ -42,10 +50,12 @@ export default function EnhancedWatchlist() {
           lastPrice: recentDecision?.price || 0
         }
       })
-      
+
       setWatchlist(enhanced)
-    } catch (error) {
+      setLastUpdate(new Date())
+    } catch (error: any) {
       console.error('Error fetching watchlist:', error)
+      setError(error.message || 'Failed to load watchlist')
     } finally {
       setLoading(false)
     }
@@ -92,7 +102,7 @@ export default function EnhancedWatchlist() {
     <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700">
       {/* Header with Autonomous Badge */}
       <div className="flex items-center justify-between mb-4">
-        <div>
+        <div className="flex-1">
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">Watchlist</h2>
           <div className="flex items-center gap-2 mt-1">
             <div className="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded text-xs font-medium">
@@ -101,13 +111,36 @@ export default function EnhancedWatchlist() {
             <span className="text-xs text-gray-500 dark:text-gray-400">
               Discovers stocks daily at 8 AM ET
             </span>
+            {lastUpdate && (
+              <span className="text-xs text-gray-400 dark:text-gray-500">
+                • Updated {lastUpdate.toLocaleTimeString()}
+              </span>
+            )}
           </div>
         </div>
-        <div className="text-right">
-          <div className="text-xs text-gray-500 dark:text-gray-400">Stocks Monitored</div>
-          <div className="text-2xl font-bold text-gray-900 dark:text-white">{watchlist.length}</div>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={fetchWatchlist}
+            disabled={loading}
+            className="px-3 py-1.5 text-xs bg-blue-100 hover:bg-blue-200 dark:bg-blue-900/30 dark:hover:bg-blue-900/50 text-blue-700 dark:text-blue-400 rounded-lg font-medium transition-colors disabled:opacity-50"
+          >
+            {loading ? '⟳' : '↻'} Refresh
+          </button>
+          <div className="text-right">
+            <div className="text-xs text-gray-500 dark:text-gray-400">Stocks Monitored</div>
+            <div className="text-2xl font-bold text-gray-900 dark:text-white">{watchlist.length}</div>
+          </div>
         </div>
       </div>
+
+      {/* Error State */}
+      {error && (
+        <div className="mb-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
+          <div className="text-sm text-red-800 dark:text-red-400">
+            ⚠️ {error}
+          </div>
+        </div>
+      )}
 
       {/* Info Banner */}
       <div className="mb-4 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">

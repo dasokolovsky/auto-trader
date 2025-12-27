@@ -28,16 +28,11 @@ export default function ActivityFeed() {
   const fetchActivities = async () => {
     try {
       // Fetch recent trades
-      const tradesRes = await fetch('/api/trades?limit=5')
+      const tradesRes = await fetch('/api/trades?limit=10')
       const tradesData = await tradesRes.json()
       const trades = tradesData.trades || []
 
-      // Fetch recent intelligent decisions
-      const decisionsRes = await fetch('/api/intelligent-decisions?limit=5')
-      const decisionsData = await decisionsRes.json()
-      const decisions = decisionsData.decisions || []
-
-      // Combine and format activities
+      // Format trade activities
       const tradeActivities: Activity[] = trades.map((trade: Trade) => ({
         id: trade.id,
         type: 'trade' as const,
@@ -48,18 +43,8 @@ export default function ActivityFeed() {
         color: trade.side === 'buy' ? 'green' : 'red'
       }))
 
-      const decisionActivities: Activity[] = decisions.map((decision: any) => ({
-        id: decision.id,
-        type: 'decision' as const,
-        timestamp: decision.created_at,
-        title: `${decision.action.toUpperCase()} Signal: ${decision.ticker}`,
-        description: decision.reason.substring(0, 100) + (decision.reason.length > 100 ? '...' : ''),
-        icon: decision.action === 'BUY' ? '🎯' : decision.action === 'SELL' ? '💰' : '👀',
-        color: decision.action === 'BUY' ? 'blue' : decision.action === 'SELL' ? 'purple' : 'gray'
-      }))
-
-      // Combine and sort by timestamp
-      const allActivities = [...tradeActivities, ...decisionActivities]
+      // Sort by timestamp and limit to 10
+      const allActivities = tradeActivities
         .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
         .slice(0, 10)
 

@@ -35,19 +35,14 @@ export default function EnhancedWatchlist() {
 
       const data = await res.json()
 
-      // Fetch recent decisions to show signals
-      const decisionsRes = await fetch('/api/intelligent-decisions?limit=20')
-      const decisionsData = await decisionsRes.json()
-      const decisions = decisionsData.decisions || []
-
-      // Enhance watchlist with signals
+      // Set watchlist with default HOLD signal
+      // (Signals will be added in a future update)
       const enhanced = (data.watchlist || []).map((item: WatchlistItem) => {
-        const recentDecision = decisions.find((d: any) => d.ticker === item.ticker)
         return {
           ...item,
-          signal: recentDecision?.action || 'HOLD',
-          signalStrength: recentDecision?.confidence || 0,
-          lastPrice: recentDecision?.price || 0
+          signal: 'HOLD' as const,
+          signalStrength: 0,
+          lastPrice: 0
         }
       })
 
